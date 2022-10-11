@@ -1,6 +1,10 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
+import './components/General.css'
+
 import Login from './components/Login/Login';
+import './components/Login/Login.css'
+
 
 function App() {
   return (
