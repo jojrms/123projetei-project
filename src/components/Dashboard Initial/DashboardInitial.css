@@ -1,0 +1,23 @@
+.App{
+    display: grid;
+    grid-template-columns: 13vh 20% auto;
+}
+
+.sectionMenuLeftFixed{
+    width: 100%;
+    height: 100%;
+    background-color: #1a212f;
+    display: grid;
+}
+.sectionMenuLeftFixed i{
+    width: 7vh;
+    height: 7vh;
+    background-image: url(../Images/Icone.svg);
+    background-size: contain;
+    margin: 2vh auto auto auto;
+}
+
+
+.sectionLeftProfile{
+    background-color: #edf4d9;
+}
