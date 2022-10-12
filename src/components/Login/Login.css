@@ -3,27 +3,27 @@
     grid-template-columns: 35% auto;
 }
 
-section:nth-of-type(1){
+.sectionExbForm{
     min-width: 50vh;
     height: fit-content;
     margin: auto;
     display: block;
 }
-h1{
+.sectionExbForm h1{
     font-size: 5vh;
 }
-h2{
+.sectionExbForm h2{
     width: 80%;
     font-size: 2vh;
     margin-top: 1vh;
 }
-h1, h2{
+.sectionExbForm h1, h2{
     width: 100%;
     text-align: center;
     font-weight: 500;
     margin: 0;
 }
-button{
+.sectionExbForm button{
     width: 80%;
     height: fit-content;
     border-radius: 7px;
@@ -35,24 +35,24 @@ button{
     font-weight: 500;
     padding: 1vh 0vw;
 }
-button img{
+.sectionExbForm button img{
     margin: auto 1vw auto auto;
 }
-button p{
+.sectionExbForm button p{
     margin: auto auto auto 0vh;
 }
-span{
+.sectionExbForm span{
     width: 80%;
     height: 1px;
     background-color: #dfdfdf;
     display: flex;
     margin: 5vh auto auto auto;
 }
-span div{
+.sectionExbForm span div{
     width: fit-content;
     margin: auto;
 }
-span p{
+.sectionExbForm span p{
     text-align: center;
     margin: -1.5vh 0vw 0vh -1vw;
     background-color: white;
@@ -62,21 +62,21 @@ span p{
     font-size: 2vh;
 }
 
-form{
+.sectionExbForm form{
     width: 100%;
     height: fit-content;
     display: grid;
     grid-gap: 3vh;
     margin-top: 7vh;
 }
-form input{
+.sectionExbForm form input{
     width: 80%;
     height: 3vh;
     margin: auto;
     border-bottom: 1px solid #dfdfdf;
     padding-bottom: 1vh;
 }
-form button{
+.sectionExbForm form button{
     width: fit-content;
     margin: 0vh 10% 0vh auto;
     border-radius: 0;
@@ -98,13 +98,13 @@ form button{
 }
 
 
-section:nth-of-type(2){
+.sectionExbDecoration{
     background-image: url('../Images/Predio.jpg');
     background-size: cover;
     border-radius: 8vw 0px 0px 8vw;
     display: grid;
 }
-section:nth-of-type(2) i{
+.sectionExbDecoration i{
     width: 30vh;
     height: 30vh;
     background-image: url('../Images/Icone.svg');
@@ -112,7 +112,7 @@ section:nth-of-type(2) i{
     margin: auto auto 0vh auto;
     display: block;
 }
-section:nth-of-type(2) p{
+.sectionExbDecoration p{
     color: white;
     margin-top: auto;
     text-align: center;

@@ -1,10 +1,12 @@
-import './Login.css'
+import React from 'react';
+
+import './Login.css';
 
 export default function Login(){
 
     return(
         <>
-            <section>
+            <section className='sectionExbForm'>
                 <h1>Welcome Back</h1>
                 <h2>Continue with Google or enter your details to <br/> get sign in to your account</h2>
                 <button>
@@ -24,7 +26,7 @@ export default function Login(){
                     <input type='submit' id='btn-login' value='Log in' placeholder='Log in'/>
                 </form>
             </section>
-            <section>
+            <section className='sectionExbDecoration'>
                 <i/>
                 <p>Copyrigth @room 2022 | <a>Privacy Policy</a></p>
             </section>
