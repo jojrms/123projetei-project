@@ -1,0 +1,120 @@
+.App{
+    display: grid;
+    grid-template-columns: 35% auto;
+}
+
+section:nth-of-type(1){
+    min-width: 50vh;
+    height: fit-content;
+    margin: auto;
+    display: block;
+}
+h1{
+    font-size: 5vh;
+}
+h2{
+    width: 80%;
+    font-size: 2vh;
+    margin-top: 1vh;
+}
+h1, h2{
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    margin: 0;
+}
+button{
+    width: 80%;
+    height: fit-content;
+    border-radius: 7px;
+    border: 1px solid #111727;
+    color: #111727;
+    margin: 3vh auto auto auto;
+    display: flex;
+    grid-gap: 5px;
+    font-weight: 500;
+    padding: 1vh 0vw;
+}
+button img{
+    margin: auto 1vw auto auto;
+}
+button p{
+    margin: auto auto auto 0vh;
+}
+span{
+    width: 80%;
+    height: 1px;
+    background-color: #dfdfdf;
+    display: flex;
+    margin: 5vh auto auto auto;
+}
+span div{
+    width: fit-content;
+    margin: auto;
+}
+span p{
+    text-align: center;
+    margin: -1.5vh 0vw 0vh -1vw;
+    background-color: white;
+    padding: 0vh 1vw;
+    position: absolute;
+    color: #a6a6a6;
+    font-size: 2vh;
+}
+
+form{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-gap: 3vh;
+    margin-top: 7vh;
+}
+form input{
+    width: 80%;
+    height: 3vh;
+    margin: auto;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 1vh;
+}
+form button{
+    width: fit-content;
+    margin: 0vh 10% 0vh auto;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #111727;
+}
+#btn-login{
+    width: 80%;
+    height: fit-content;
+    background-color: #111727;
+    color: white;
+    text-align: center;
+    padding: 1.5vh 0vw;
+    display: list-item;
+    font-weight: 500;
+    letter-spacing: .5px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+section:nth-of-type(2){
+    background-image: url('../Images/Predio.jpg');
+    background-size: cover;
+    border-radius: 8vw 0px 0px 8vw;
+    display: grid;
+}
+section:nth-of-type(2) i{
+    width: 30vh;
+    height: 30vh;
+    background-image: url('../Images/Icone.svg');
+    background-size: contain;
+    margin: auto auto 0vh auto;
+    display: block;
+}
+section:nth-of-type(2) p{
+    color: white;
+    margin-top: auto;
+    text-align: center;
+    text-shadow: 0px 0px 15px black;
+}
