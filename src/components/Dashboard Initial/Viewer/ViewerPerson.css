@@ -1,0 +1,44 @@
+.divBackground{
+    height: 13vh;
+    display: flex;
+    background-color: white;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.divBackground:hover{
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.062);
+}
+.divBackground span{
+    width: 8vh;
+    height: 8vh;
+    border-radius: 100%;
+    margin: auto 2vh auto 3.5vh;
+    background-color: whitesmoke;
+}
+.divBackground p:nth-of-type(1){
+    text-transform: capitalize;
+    margin: 3vh 0 0 0;
+    font-weight: 500;
+    letter-spacing: .3px;
+    font-size: 2.5vh;
+}
+.divBackground p:nth-of-type(2){
+    font-size: 2vh;
+    margin: 0;
+    color: #c2c2c2;
+}
+
+
+.spanExbInfoPerson{
+    background-color: white;
+    border-radius: 30px;
+    margin: 5vh 5vh 5vh 7vh;
+}
+#spanDec{
+    width: 5vh;
+    height: 5vh;
+    margin-top: 5vh;
+    margin-left: -3vh;
+    background-color: #ffffff;
+    border-radius: 100%;
+}
