@@ -28,7 +28,7 @@ export default function CreateUser(){
     }
 
     return(
-        <div className='divAbsolute' id='divAbsolute'  onClick={() => {document.getElementById('divAbsolute').style.display = 'none'; navigate("/DashboardInitial")}}>
+        <div className='divAbsolute' id='divAbsoluteCreate' onClick={() => {document.getElementById('divAbsoluteCreate').style.display = 'none'; navigate("/DashboardInitial")}}>
             <span id="spanBackgroundCreate">
                 <div>
                     <img src="https://img.icons8.com/small/32/000000/user-group-man-man.png"/>
