@@ -19,7 +19,6 @@ export default function EditUser(){
     const existUser = userList.filter(user => user.id === parseInt(params.id))
     const {name, username, email} = existUser
 
-
     const [data, setData] = useState({
         name: existUser[0].name,
         username: existUser[0].username,
@@ -40,7 +39,7 @@ export default function EditUser(){
             username: data.username,
             email: data.email
         }));
-        navigate("/DashboardInitial")
+        navigate(`/DashboardInitial/${1}`)
     }
 
     return(
@@ -49,6 +48,7 @@ export default function EditUser(){
                 <div>
                     <img src="https://img.icons8.com/small/32/000000/create-new.png"/>
                     <h1>Modifique a conta do usuário</h1>
+                    <button id='btnClose' />
                 </div>
                 <p>Edite a conta do usuário físico que tem acesso ao dashboard</p>
                 <input type='text' value={data.name} placeholder='Nome Completo' onChange={(e) => setData({...data, name: e.target.value})}/>

@@ -18,6 +18,12 @@
     font-size: 3vh;
     font-weight: 500;
 }
+#btnClose{
+    width: 4vh;
+    height: 4vh;
+    background-image: url(https://img.icons8.com/small/32/000000/cancel--v1.png);
+    background-size: contain;
+}
 #spanBackgroundEdit p{
     font-size: 2vh;
     margin-bottom: 3vh;

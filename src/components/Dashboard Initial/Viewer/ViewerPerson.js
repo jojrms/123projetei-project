@@ -1,4 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { deleteUser, editUser } from '../../../features/Users';
 import EditUser from '../Edit User/EditUser';
 
@@ -9,13 +11,6 @@ export default function ViewerPerson({id, name, email, user, image}){
 
     const dispatch = useDispatch();
 
-    function editUser({name, email, user}){
-        const editUser = <EditUser name={name} email={email} user={user}/>
-
-        console.log(editUser.props);
-    }
-
-    console.log( user, name, image);
 
     return(
         <div className="divBackground" id='divBackground'>
@@ -26,7 +21,7 @@ export default function ViewerPerson({id, name, email, user, image}){
                 <p>Email: {email}</p>  
             </div>
             <button id='btnDeleteUser' onClick={() => {dispatch(deleteUser({id: id}))}}>Deletar Usuário</button>
-            <button id='btnEditUser' onClick={editUser({email: 'teste'})}>Visualizar e Editar</button>
+            <button id='btnEditUser' onClick={editUser}>Visualizar e Editar</button>
         </div>
     )
 }

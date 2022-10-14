@@ -27,7 +27,7 @@ export default function Login(){
             return;
         }
 
-        navigate("/DashboardInitial")
+        navigate(`/DashboardInitial/${1}`)
     };
 
     const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
