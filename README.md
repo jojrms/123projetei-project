@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# SOBRE O PROJETO
+Este código simula uma área de login, com o acesso pré-definido, onde, caso dê sucesso, direciona o usuário a um dashboard, em que poderá visualizar usuários fakes já existentes, criar, editar e excluir. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O mockup utilizado não foi criado pela desenvolvedora, mas retirado do site Dribbble. Os créditos serão atribuidos mais abaixo, no setor MOCKUP. Algumas alterações foram realizadas.
 
-## Available Scripts
+### PÁGINA DE LOGIN
+email: 123projetei@gmail.com
+senha: 123projetei
 
-In the project directory, you can run:
+## REQUISIÇÕES
+React = ^18.2.0,
+React-redux = ^8.0.4,
+Node = >=6.0.0
 
-### `npm start`
+## LINGUAGENS, FRAMEWORKS E BIBLIOTECAS
+Linguagem: JavaScript
+Framework: React.js
+Bibliotecas: Redux
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## MOCKUP
+O mockup usado foi retirado do site Dribbble.
+Atualmente o design não se encontra de forma responsiva, tendo sido modelado apenas para desktop. As unidades utilizadas foram, em sua grande maioria, "vh", "vw" e "%".
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### LOGIN (MOCKUP)
+Usuário: Jordan Hughes
+Link: https://dribbble.com/shots/19338138-Log-in-page-Untitled-UI
 
-### `npm test`
+### DASHBOARD (MOCKUP)
+Usuário: Budiarti R.
+Link: https://dribbble.com/shots/18882866-Virtual-School-Dashboard-Design
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### LOGOTIPO (MOCKUP)
+Usuário: Vito Arvy
+Link: https://dribbble.com/shots/19274765-Rooom-Logo-Design
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## COMO INICIAR
+1. Clone este repositório no CMD utilizando o comando "git clone URL_AQUI",
+2. Após finalizado, entre no arquivo e abra em seu editor de código-fonte,
+3. Realize um npm install para baixar todos os módulos node,
+4. Finalize com um 'npm start' para abrir um localhost
