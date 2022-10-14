@@ -9,8 +9,9 @@ import './CreateUser.css';
 export default function CreateUser(){
 
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
+
+    //Puxa a lista com os usuários fakes criados no FakeData.js
     const userList = useSelector((state) => state.users.value)
 
     const [data, setData] = useState({
@@ -19,6 +20,10 @@ export default function CreateUser(){
         email: '',
     })
 
+
+    // Função que verifica se os campos foram preenchidos. Caso forem, cria o usuário e retorna
+    // para o dashboard.
+    // OBS: NÃO FOI REALIZADA VERIFICAÇÃO IDEAL
     const createUser = async() => {
 
         if(data.name.length < 5 || data.email.length < 10 || data.username.length < 5){
@@ -31,6 +36,7 @@ export default function CreateUser(){
         
     }
 
+    // Função para fechar a div que cria os usuários
     function closeDiv(){
         document.getElementById("divAbsoluteCreate").style.display = 'none';
         navigate("/DashboardInitial")
@@ -38,21 +44,26 @@ export default function CreateUser(){
 
     return(
         <div className='divAbsolute' id='divAbsoluteCreate'>
+
             <span id="spanBackgroundCreate">
                 <div>
                     <img src="https://img.icons8.com/small/32/000000/user-group-man-man.png"/>
                     <h1>Configure a conta do usuário</h1>
                     <button id='btnClose' onClick={closeDiv}/>
                 </div>
+
                 <p>Crie uma conta para o usuário físico que terá acesso ao dashboard</p>
+
                 <input type='text' placeholder='Nome Completo' onChange={(event) => {setData({...data, name: event.target.value})}}/>
                 <input type='text' placeholder='Username' onChange={(event) => {setData({...data, username: event.target.value})}}/>
                 <input type='email' placeholder='Email' onChange={(event) => {setData({...data, email: event.target.value})}}/>
+                
                 <button id='btnAddPerson' onClick={createUser}>
                     <img src="https://img.icons8.com/small/16/F5F5F5/add.png"/>
                     Criar Usuário
                 </button>  
             </span>
+
         </div>
     )
 }

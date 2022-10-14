@@ -11,15 +11,26 @@ export default function Login(){
     const {login} = useAuth();
     const navigate = useNavigate();
 
+    const [data, setData] = useState({
+        email: "",
+        password:"",
+        error: "",
+    })
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+
+    //Função que verificará se todos os campos foram preenchidos e,
+    //caso sim, faz login e direciona ao dashboard
     const handleLogin = () => {
         if(!email | !password){
             setError("Preencha todos os campos");
             return;
         }
+
+        //Executa função de login
         const res = login(email, password);
 
         if(res){
@@ -30,9 +41,10 @@ export default function Login(){
         navigate(`/DashboardInitial`)
     };
 
+
+    // Lançando usuário e senha no localstorage para acesso
     const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
-    let userUse;
-    userUse = [{email: '123projetei@gmail.com', password: '123projetei'}];
+    let userUse = [{email: '123projetei@gmail.com', password: '123projetei'}];
     localStorage.setItem("users_db", JSON.stringify(userUse));
 
     return(
@@ -51,12 +63,15 @@ export default function Login(){
                         </div>
                     </span>
 
+                    {/* INPUTS COM AS INFORMAÇÕES PARA LOGIN */}
                     <div>
                         <input type='email' placeholder='Email' value={email} onChange={(e) => [setEmail(e.target.value), setError("")]}/>
                         <input type='password' placeholder='Password' value={password} onChange={(e) => [setPassword(e.target.value), setError("")]}/>
                         <p className='error'>{error}</p>
                         <button  id='btn-login' value='Log in' onClick={handleLogin}>Entrar</button>
                     </div>
+
+
                 </aside>
 
                 <aside className='asideExbDecoration'>

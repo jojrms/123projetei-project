@@ -3,23 +3,23 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import ViewerPerson from './Viewer/ViewerPerson';
-
 import CreateUser from './Create User/CreateUser';
-
-
-import './DashboardInitial.css';
 import useAuth from '../../hooks/useAuth';
+import './DashboardInitial.css';
+
 
 export default function DashboardInitial(){
 
     const { signout } = useAuth();
     const navigate = useNavigate();
 
+    // Puxa a lista de usuários fakes criados no arquivo FakeData.js
     const userList = useSelector((state) => state.users.value)
 
+    
+    // Função para exibir a div que cria usuários
     function createUser(){
         document.getElementById('divAbsoluteCreate').style.display = 'flex';
-        navigate(`/DashboardInitial/create-user/${1}`)
     }
 
     return(
@@ -66,6 +66,7 @@ export default function DashboardInitial(){
                         {userList.map((user) => {
                             return(
                                 <ViewerPerson 
+                                    key={user.id}
                                     id={user.id}
                                     name={user.name}
                                     user={user.username}

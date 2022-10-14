@@ -12,6 +12,8 @@ export default function ViewerPerson({id, name, email, user, image}){
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    // Função que, ao clicar no botão de edição, direciona o usuário
+    // à página que editará os dados
     function editUser(){
         navigate(`/DashboardInitial/edit-user/${id}`)
     }
@@ -25,6 +27,8 @@ export default function ViewerPerson({id, name, email, user, image}){
                 <p>{name}</p>  
                 <p>Email: {email}</p>  
             </div>
+
+            {/* BOTÃO COM FUNÇÃO DE DELETAR O USUÁRIO */}
             <button id='btnDeleteUser' onClick={() => {dispatch(deleteUser({id: id}))}}>Deletar Usuário</button>
             <button id='btnEditUser' onClick={editUser}>Visualizar e Editar</button>
         </div>
