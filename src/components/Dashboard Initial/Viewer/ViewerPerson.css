@@ -1,9 +1,10 @@
 .divBackground{
-    height: 13vh;
-    display: flex;
+    height: fit-content;
     background-color: white;
     border-radius: 30px;
-    cursor: pointer;
+    padding: 3vh;
+    margin-bottom: 2vh;
+    display: grid;
 }
 .divBackground:hover{
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.062);
@@ -12,33 +13,56 @@
     width: 8vh;
     height: 8vh;
     border-radius: 100%;
-    margin: auto 2vh auto 3.5vh;
+    margin: auto;
     background-color: whitesmoke;
+    background-size: cover;
+}
+.divBackground h1{
+    margin: 0;
+    position: absolute;
+    margin-left: 1vh;
+    font-size: 4vh;
+    font-weight: 500;
+    color: #efefef;
 }
 .divBackground p:nth-of-type(1){
+    width: 100%;
     text-transform: capitalize;
+    text-align: center;
     margin: 3vh 0 0 0;
     font-weight: 500;
     letter-spacing: .3px;
-    font-size: 2.5vh;
+    font-size: 3vh;
 }
 .divBackground p:nth-of-type(2){
+    width: 100%;
     font-size: 2vh;
     margin: 0;
     color: #c2c2c2;
+    text-align: center;
+}
+.divBackground img{
+    width: 3vh;
+    height: 3vh;
+    margin: auto;
+}
+.divBackground img:nth-of-type(1){
+    margin-right: 0vh;
+}
+.divBackground img:nth-of-type(2){
+    margin-left: 2vh;
+    margin-right: 2vh;
 }
 
-
-.spanExbInfoPerson{
-    background-color: white;
-    border-radius: 30px;
-    margin: 5vh 5vh 5vh 7vh;
+#btnDeleteUser{
+    background-color: rgb(206, 25, 25);
+    color: white;
+    align-items: center;
+    margin: 2vh 0vh ;
+    padding: 1.5vh;
+    border-radius: 20px;
 }
-#spanDec{
-    width: 5vh;
-    height: 5vh;
-    margin-top: 5vh;
-    margin-left: -3vh;
-    background-color: #ffffff;
-    border-radius: 100%;
+.divBackground #btnEditUser{
+    padding: .5vh;
+    color: #c2c2c2;
 }
