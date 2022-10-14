@@ -1,23 +1,141 @@
-.App{
-    display: grid;
-    grid-template-columns: 13vh 20% auto;
-}
-
-.sectionMenuLeftFixed{
+.sectionGeneralDashboard{
     width: 100%;
     height: 100%;
-    background-color: #1a212f;
     display: grid;
+    grid-template-rows: 10vh auto;
+    background-color: #eceef0;
 }
-.sectionMenuLeftFixed i{
+
+header{
+    width: 100%;
+    display: flex;
+    background-color: white;
+}
+header i{
     width: 7vh;
     height: 7vh;
     background-image: url(../Images/Icone.svg);
     background-size: contain;
-    margin: 2vh auto auto auto;
+    margin: auto 2vh auto 5vh;
+    filter: invert(1) opacity(0.2);
+}
+.spanSearch{
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid #eceef0;
+    border-radius: 30px;
+    margin: auto auto auto 5vh;
+    display: flex;
+    padding: 1vh;
+}
+.spanSearch img{
+    width: 3.5vh;
+    margin: 0vh 1vh;
+    filter: opacity(0.2);
+}
+.spanSearch input{
+    width: 20vw;
+}
+.spanSearch input::placeholder{
+    color: #c2c2c2;
+}
+header ul{
+    height: 100%;
+    display: flex;
+    grid-gap: 6vh;
+    margin: auto auto auto 2vw;
+}
+header ul li{
+    height: 100%;
+    margin: auto;
+    display: flex;
+    color: #c2c2c2;
+}
+header ul li p{
+    margin: auto;
+}
+.liFocus{
+    border-bottom: 2px solid blue;
+    color: black;
+}
+.spanPhotoProfile{
+    width: 6vh;
+    height: 6vh;
+    border-radius: 100%;
+    background-color: black;
+    margin: auto 5vh auto auto;
+    cursor: pointer;
 }
 
 
-.sectionLeftProfile{
-    background-color: #edf4d9;
+.sectionExbInfoTeams{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 28vw auto;
 }
+
+.asideExbFunctions{
+    background-color: white;
+    border-radius: 30px;
+    margin: 5vh;
+    padding: 5vh;
+}
+.asideExbFunctions h1{
+    font-size: 2.5vh;
+    letter-spacing: .5px;
+    font-weight: 500;
+    margin: 0;
+}
+.asideExbFunctions h2{
+    font-size: 2vh;
+    text-align: initial;
+    color: #c2c2c2;
+    margin-bottom: 5vh;
+}
+.asideExbFunctions button{
+    width: 100%;
+    height: fit-content;
+    padding: 2vh;
+    border-radius: 15px;
+    text-align: initial;
+    display: flex;
+}
+.asideExbFunctions button img{
+    margin: auto 2vh auto 2vh;
+}
+.asideExbFunctions button:hover{
+    background-color: whitesmoke;
+}
+#btnListPeople{
+    margin-bottom: 2vh;
+    background-color: whitesmoke;
+}
+#formAddPerson{
+    display: grid;
+    grid-gap: 2vh;
+    padding: 3vh;
+    border: 1px solid whitesmoke;
+    border-radius: 15px;
+}
+#formAddPerson input{
+    width: 95%;
+    border: 1px solid whitesmoke;
+    padding: 1.5vh 1vh;
+    border-radius: 10px;
+}
+#btnAddPerson{
+    background-color: #40c057;
+    color: white;
+}
+
+
+.sectionExbTeam{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto;
+    grid-gap: 2vh;
+    margin: 5vh 5vh 0vh 0vh;
+    white-space: nowrap;
+    overflow-y: scroll;
+}
+
