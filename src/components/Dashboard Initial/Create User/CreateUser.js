@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 import { addUser } from '../../../features/Users';
 
 import './CreateUser.css';
 
 
 export default function CreateUser(){
+
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
     const userList = useSelector((state) => state.users.value)
@@ -25,7 +28,7 @@ export default function CreateUser(){
     }
 
     return(
-        <div className='divAbsolute' id='divAbsolute'  onClick={() => {document.getElementById('divAbsolute').style.display = 'none'}}>
+        <div className='divAbsolute' id='divAbsolute'  onClick={() => {document.getElementById('divAbsolute').style.display = 'none'; navigate("/DashboardInitial")}}>
             <span id="spanBackgroundCreate">
                 <div>
                     <img src="https://img.icons8.com/small/32/000000/user-group-man-man.png"/>

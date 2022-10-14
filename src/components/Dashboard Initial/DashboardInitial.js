@@ -52,7 +52,7 @@ export default function DashboardInitial(){
                         <img src="https://img.icons8.com/small/16/000000/gender-neutral-user.png"/>
                         Listar Usuários
                     </button>
-                    <button id='btnCreateUser' onClick={() => {document.getElementById('divAbsolute').style.display = 'flex'}}>
+                    <button id='btnCreateUser' onClick={() => {document.getElementById('divAbsolute').style.display = 'flex'; navigate("/DashboardInitial/create-user")}}>
                         <img src="https://img.icons8.com/small/16/000000/add.png"/>
                         Criar Usuário
                     </button>
