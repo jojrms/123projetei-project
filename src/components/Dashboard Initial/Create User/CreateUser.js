@@ -20,19 +20,29 @@ export default function CreateUser(){
     })
 
     const createUser = async() => {
-        dispatch(addUser({id: userList[userList.length - 1].id + 1, name: data.name , username: data.username , email: data.email}))
-        
-        document.getElementById('divAbsolute').style.display = 'none';
 
-        return console.log('A criação do usuário foi bem executada');
+        if(data.name.length < 5 || data.email.length < 10 || data.username.length < 5){
+            window.alert('Não foi possível criar este usuário. Preencha todos os campos corretamente')
+        } else{
+            dispatch(addUser({id: userList[userList.length - 1].id + 1, name: data.name , username: data.username , email: data.email}))
+            document.getElementById('divAbsoluteCreate').style.display = 'none';
+        }
+
+        
+    }
+
+    function closeDiv(){
+        document.getElementById("divAbsoluteCreate").style.display = 'none';
+        navigate("/DashboardInitial")
     }
 
     return(
-        <div className='divAbsolute' id='divAbsoluteCreate' onClick={() => {document.getElementById('divAbsoluteCreate').style.display = 'none'; navigate("/DashboardInitial")}}>
+        <div className='divAbsolute' id='divAbsoluteCreate'>
             <span id="spanBackgroundCreate">
                 <div>
                     <img src="https://img.icons8.com/small/32/000000/user-group-man-man.png"/>
                     <h1>Configure a conta do usuário</h1>
+                    <button id='btnClose' onClick={closeDiv}/>
                 </div>
                 <p>Crie uma conta para o usuário físico que terá acesso ao dashboard</p>
                 <input type='text' placeholder='Nome Completo' onChange={(event) => {setData({...data, name: event.target.value})}}/>

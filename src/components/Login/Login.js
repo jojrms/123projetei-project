@@ -27,7 +27,7 @@ export default function Login(){
             return;
         }
 
-        navigate(`/DashboardInitial/${1}`)
+        navigate(`/DashboardInitial`)
     };
 
     const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
@@ -40,7 +40,7 @@ export default function Login(){
             <section className='sectionGeneral'>
                 <aside className='asideExbForm'>
                     <h1>Welcome Back</h1>
-                    <h2>Continue with Google or enter your details to <br/> get sign in to your account</h2>
+                    <h2 style={{width: '100%'}}>Continue with Google or enter your details to <br/> get sign in to your account</h2>
                     <button>
                     <img src="https://img.icons8.com/color/24/000000/google-logo.png"/>
                         <p>Log in with Google</p>

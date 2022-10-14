@@ -1,14 +1,20 @@
+#divAbsoluteEdit{
+    display: grid;
+    grid-template-rows: 10vh auto;
+    background-color: #eceef0;
+}
 #spanBackgroundEdit{
-    width: 50vh;
-    height: 60vh;
-    margin: auto;
     display: block;
     border-radius: 5px;
     background-color: white;
+    margin: 5vh;
     padding: 5vh;
+    border-radius: 30px;
 }
 #spanBackgroundEdit div{
     display: flex;
+    margin: 5vh;
+    margin-bottom: 2vh;
 }
 #spanBackgroundEdit div img{
     margin: auto 3vh auto 0vh;
@@ -26,22 +32,30 @@
 }
 #spanBackgroundEdit p{
     font-size: 2vh;
-    margin-bottom: 3vh;
+    margin: 0vh 0vh 3vh 5vh;
     color: rgb(185, 185, 185);
 }
-#spanBackgroundEdit input{
-    width: 92%;
+#spanBackgroundEdit aside{
+    width: 90%;
+    padding-inline-start: 3vh;
+}
+#spanBackgroundEdit aside label{
+    font-size: 2vh;
+    margin-left: 6vh;
+}
+#spanBackgroundEdit aside input{
+    width: -webkit-fill-available;
     height: fit-content;
     border: 1px solid rgb(233, 233, 233);
     padding: 2vh;
-    margin-bottom: 2vh;
+    margin: 1vh 0vh 2vh 5vh;
     border-radius: 10px;
 }
-#btnAddPerson{
-    width: 100%;
+#btnEditUser1{
+    width: fit-content;
     background-color: #0ebe66;
     color: white;
-    margin: 2vh 0vh 0vh 0vh;
+    margin: auto 0vh 2vh auto;
     align-items: center;
     display: flex;
     padding: 2vh 3vh;

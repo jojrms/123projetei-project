@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 import ViewerPerson from './Viewer/ViewerPerson';
 
-import EditUser from './Edit User/EditUser';
 import CreateUser from './Create User/CreateUser';
 
 
@@ -18,11 +17,15 @@ export default function DashboardInitial(){
 
     const userList = useSelector((state) => state.users.value)
 
+    function createUser(){
+        document.getElementById('divAbsoluteCreate').style.display = 'flex';
+        navigate(`/DashboardInitial/create-user/${1}`)
+    }
+
     return(
         <section className='sectionGeneralDashboard'>
 
             <CreateUser/>
-            <EditUser/>
 
             <header>
                 <i/>
@@ -52,7 +55,7 @@ export default function DashboardInitial(){
                         <img src="https://img.icons8.com/small/16/000000/gender-neutral-user.png"/>
                         Listar Usuários
                     </button>
-                    <button id='btnCreateUser' onClick={() => {document.getElementById('divAbsoluteCreate').style.display = 'flex'; navigate("/DashboardInitial/create-user")}}>
+                    <button id='btnCreateUser' onClick={createUser}>
                         <img src="https://img.icons8.com/small/16/000000/add.png"/>
                         Criar Usuário
                     </button>

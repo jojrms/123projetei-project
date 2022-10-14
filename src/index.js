@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 
 import usersReducer from './features/Users'
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     users: usersReducer,
   }

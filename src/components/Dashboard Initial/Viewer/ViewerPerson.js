@@ -10,6 +10,11 @@ import './ViewerPerson.css';
 export default function ViewerPerson({id, name, email, user, image}){
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    function editUser(){
+        navigate(`/DashboardInitial/edit-user/${id}`)
+    }
 
 
     return(
