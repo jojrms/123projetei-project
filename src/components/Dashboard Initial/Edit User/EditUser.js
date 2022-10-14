@@ -17,8 +17,8 @@ export default function EditUser(){
     const params = useParams();
 
     // Puxa a lista de usuários fakes criados no FakeData.js
-    const users = useSelector(store => store.users.value);
-    console.log(users);
+
+    let users = JSON.parse(localStorage.getItem('users'));
 
     // Filtra da lista o usuário que possui a mesma ID do parâmetro na URL
     const existUser = users.filter(user => user.id === parseInt(params.id))
@@ -35,17 +35,13 @@ export default function EditUser(){
     // Função para editar usuário. Exibe as informações no input e, após editar
     // retorna ao dashboard.
     function handleEditUser(){
-        setData({
-            name: '',
-            username: '',
-            email: '',
-        });
         dispatch(editUser({
             id: params.id,
             name: data.name,
             username: data.username,
             email: data.email
         }));
+        localStorage.setItem('users', JSON.stringify(users))
         navigate("/DashboardInitial")
     }
 

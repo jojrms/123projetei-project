@@ -22,6 +22,9 @@ export default function DashboardInitial(){
         document.getElementById('divAbsoluteCreate').style.display = 'flex';
     }
 
+    const users = JSON.parse(localStorage.getItem("users"));
+    console.log(users);
+
     return(
         <section className='sectionGeneralDashboard'>
 
@@ -63,7 +66,7 @@ export default function DashboardInitial(){
                 </aside>
 
                 <section className='sectionExbTeam'>
-                        {userList.map((user) => {
+                        {users.map((user) => {
                             return(
                                 <ViewerPerson 
                                     key={user.id}
@@ -76,6 +79,15 @@ export default function DashboardInitial(){
                                 />
                             )
                         })}
+                            {/* <ViewerPerson 
+                                key={newUsers.id}
+                                id={newUsers.id}
+                                name={newUsers.name}
+                                user={newUsers.username}
+                                email={newUsers.email}
+                                image={newUsers.urlPhoto}
+
+                            /> */}
                 </section>
 
             </section>

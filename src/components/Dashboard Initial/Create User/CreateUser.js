@@ -14,6 +14,10 @@ export default function CreateUser(){
     //Puxa a lista com os usuários fakes criados no FakeData.js
     const userList = useSelector((state) => state.users.value)
 
+    // Armazena os dados fakes em uma array no localStorage
+    // Para usar futuramente
+    const usersExistent = localStorage.setItem("users", JSON.stringify(userList))
+
     const [data, setData] = useState({
         name: '',
         username: '',
@@ -29,7 +33,28 @@ export default function CreateUser(){
         if(data.name.length < 5 || data.email.length < 10 || data.username.length < 5){
             window.alert('Não foi possível criar este usuário. Preencha todos os campos corretamente')
         } else{
-            dispatch(addUser({id: userList[userList.length - 1].id + 1, name: data.name , username: data.username , email: data.email}))
+            dispatch(addUser({
+                id: userList[userList.length - 1].id + 1, 
+                name: data.name , 
+                username: data.username , 
+                email: data.email
+            }))
+
+            // Cria um let para armazenar em uma array os dados 
+            // do usuário que será criado
+            let newUser = {
+                id: userList[userList.length - 1].id + 1, 
+                name: data.name, 
+                username: data.username, 
+                email: data.email
+            }
+            // Resgato a array do localstorage para inserir o novo usuário
+
+            let users = JSON.parse(localStorage.getItem('users'));
+            users.push(newUser)
+            localStorage.setItem('users', JSON.stringify(users))
+
+
             document.getElementById('divAbsoluteCreate').style.display = 'none';
         }
 
