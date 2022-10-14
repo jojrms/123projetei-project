@@ -21,7 +21,8 @@ function App() {
               <Route path="/" element={<Login/>}/>
               <Route path="*" element={<Login/>}/>
               <Route path="/DashboardInitial" element={<DashboardInitial/>}/>
-              <Route path="/DashboardInitial/:id" element={<DashboardInitial/>}/>
+              <Route path="/DashboardInitial/edit-user/:id" element={<DashboardInitial/>}/>
+              <Route path="/DashboardInitial/create-user" element={<DashboardInitial/>}/>
           </Routes>
         </div> 
       </BrowserRouter>  
