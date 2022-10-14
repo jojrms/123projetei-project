@@ -1,9 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
+
 import ViewerPerson from './Viewer/ViewerPerson';
-import { addUser } from '../../features/Users';
+
 import EditUser from './Edit User/EditUser';
+import CreateUser from './Create User/CreateUser';
+
 
 import './DashboardInitial.css';
 
@@ -12,13 +14,10 @@ export default function DashboardInitial(){
     const dispatch = useDispatch();
     const userList = useSelector((state) => state.users.value)
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-
     return(
         <section className='sectionGeneralDashboard'>
 
-            {/* <EditUser/> */}
+            <CreateUser/>
 
             <header>
                 <i/>
@@ -48,7 +47,7 @@ export default function DashboardInitial(){
                         <img src="https://img.icons8.com/small/16/000000/gender-neutral-user.png"/>
                         Listar Usuários
                     </button>
-                    <button id='btnCreateUser'>
+                    <button id='btnCreateUser' onClick={() => {document.getElementById('divAbsolute').style.display = 'flex'}}>
                         <img src="https://img.icons8.com/small/16/000000/add.png"/>
                         Criar Usuário
                     </button>

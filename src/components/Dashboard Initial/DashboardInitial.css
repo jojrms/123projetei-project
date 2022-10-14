@@ -113,23 +113,6 @@ header ul li p{
 #btnCreateUser{
     margin-bottom: 2vh;
 }
-#formAddPerson{
-    display: grid;
-    grid-gap: 2vh;
-    padding: 3vh;
-    border: 1px solid whitesmoke;
-    border-radius: 15px;
-}
-#formAddPerson input{
-    width: 95%;
-    border: 1px solid whitesmoke;
-    padding: 1.5vh 1vh;
-    border-radius: 10px;
-}
-#btnAddPerson{
-    background-color: #40c057;
-    color: white;
-}
 
 
 .sectionExbTeam{
