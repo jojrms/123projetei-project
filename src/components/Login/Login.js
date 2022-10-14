@@ -1,8 +1,39 @@
 import React from 'react';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+import useAuth from '../../hooks/useAuth';
 
 import './Login.css';
 
 export default function Login(){
+
+    const {login} = useAuth();
+    const navigate = useNavigate();
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+
+    const handleLogin = () => {
+        if(!email | !password){
+            setError("Preencha todos os campos");
+            return;
+        }
+        const res = login(email, password);
+
+        if(res){
+            setError(res);
+            return;
+        }
+
+        navigate("/DashboardInitial")
+    };
+
+    const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
+    let userUse;
+    userUse = [{email: '123projetei@gmail.com', password: '123projetei'}];
+    localStorage.setItem("users_db", JSON.stringify(userUse));
 
     return(
         <>
@@ -20,12 +51,12 @@ export default function Login(){
                         </div>
                     </span>
 
-                    <form>
-                        <input type='email' placeholder='Email'/>
-                        <input type='password' placeholder='Password'/>
-                        <button>Forgot password</button>
-                        <input type='submit' id='btn-login' value='Log in' placeholder='Log in'/>
-                    </form>
+                    <div>
+                        <input type='email' placeholder='Email' value={email} onChange={(e) => [setEmail(e.target.value), setError("")]}/>
+                        <input type='password' placeholder='Password' value={password} onChange={(e) => [setPassword(e.target.value), setError("")]}/>
+                        <p className='error'>{error}</p>
+                        <button  id='btn-login' value='Log in' onClick={handleLogin}>Entrar</button>
+                    </div>
                 </aside>
 
                 <aside className='asideExbDecoration'>
