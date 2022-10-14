@@ -1,0 +1,44 @@
+#spanBackgroundEdit{
+    width: 50vh;
+    height: 60vh;
+    margin: auto;
+    display: block;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5vh;
+}
+#spanBackgroundEdit div{
+    display: flex;
+}
+#spanBackgroundEdit div img{
+    margin: auto 3vh auto 0vh;
+}
+#spanBackgroundEdit div h1{
+    margin: auto 0vh auto 0vh;
+    font-size: 3vh;
+    font-weight: 500;
+}
+#spanBackgroundEdit p{
+    font-size: 2vh;
+    margin-bottom: 3vh;
+    color: rgb(185, 185, 185);
+}
+#spanBackgroundEdit input{
+    width: 92%;
+    height: fit-content;
+    border: 1px solid rgb(233, 233, 233);
+    padding: 2vh;
+    margin-bottom: 2vh;
+    border-radius: 10px;
+}
+#btnAddPerson{
+    width: 100%;
+    background-color: #0ebe66;
+    color: white;
+    margin: 2vh 0vh 0vh 0vh;
+    align-items: center;
+    display: flex;
+    padding: 2vh 3vh;
+    grid-gap: 2vh;
+    border-radius: 10px;
+}
