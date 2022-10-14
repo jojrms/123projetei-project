@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import ViewerPerson from './Viewer/ViewerPerson';
 
@@ -8,8 +9,12 @@ import CreateUser from './Create User/CreateUser';
 
 
 import './DashboardInitial.css';
+import useAuth from '../../hooks/useAuth';
 
 export default function DashboardInitial(){
+
+    const { signout } = useAuth();
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
     const userList = useSelector((state) => state.users.value)
@@ -35,7 +40,7 @@ export default function DashboardInitial(){
                     </li>
                 </ul>
 
-                <span className='spanPhotoProfile'/>
+                <button id='btnExit' onClick={() => [signout(), navigate("/")]}>Sair</button>
             </header>
 
             <section className='sectionExbInfoTeams'>

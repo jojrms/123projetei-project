@@ -58,13 +58,15 @@ header ul li p{
     border-bottom: 2px solid blue;
     color: black;
 }
-.spanPhotoProfile{
-    width: 6vh;
-    height: 6vh;
-    border-radius: 100%;
-    background-color: black;
-    margin: auto 5vh auto auto;
-    cursor: pointer;
+#btnExit{
+    width: fit-content;
+    height: fit-content;
+    padding: 1.5vh 3vh;
+    border-radius: 20px;
+    margin: auto 5vh auto 0vh;
+    background-color: #CE1919;
+    color: white;
+    align-items: center;
 }
 
 
