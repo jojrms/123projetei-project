@@ -48,15 +48,19 @@ export default function DashboardInitial(){
                         <img src="https://img.icons8.com/small/16/000000/gender-neutral-user.png"/>
                         Listar Usuários
                     </button>
-                    <div id='formAddPerson' className='AddUser'>
+                    <button id='btnCreateUser'>
+                        <img src="https://img.icons8.com/small/16/000000/add.png"/>
+                        Criar Usuário
+                    </button>
+                    {/* <div id='formAddPerson' className='AddUser'>
                         <h1>Criar Usuário</h1>
                         <input type='text' placeholder='Nome do Usuário' onChange={(event) => {setName(event.target.value)}}/>
                         <input type='email' placeholder='Email' onChange={(event) => {setEmail(event.target.value)}}/>
                         <button id='btnAddPerson' onClick={() => {dispatch(addUser({id: userList[userList.length - 1].id + 1, name , email}))}}>
-                            <img src="https://img.icons8.com/small/16/FFFFFF/add.png"/>
+                            <img src="https://img.icons8.com/small/16/F5F5F5/add.png"/>
                             Adicionar
                         </button>    
-                    </div>
+                    </div> */}
                     
                 </aside>
 
