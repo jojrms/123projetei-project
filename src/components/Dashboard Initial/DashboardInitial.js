@@ -16,13 +16,13 @@ export default function DashboardInitial(){
     const { signout } = useAuth();
     const navigate = useNavigate();
 
-    const dispatch = useDispatch();
     const userList = useSelector((state) => state.users.value)
 
     return(
         <section className='sectionGeneralDashboard'>
 
             <CreateUser/>
+            <EditUser/>
 
             <header>
                 <i/>
@@ -52,19 +52,10 @@ export default function DashboardInitial(){
                         <img src="https://img.icons8.com/small/16/000000/gender-neutral-user.png"/>
                         Listar Usuários
                     </button>
-                    <button id='btnCreateUser' onClick={() => {document.getElementById('divAbsolute').style.display = 'flex'; navigate("/DashboardInitial/create-user")}}>
+                    <button id='btnCreateUser' onClick={() => {document.getElementById('divAbsoluteCreate').style.display = 'flex'; navigate("/DashboardInitial/create-user")}}>
                         <img src="https://img.icons8.com/small/16/000000/add.png"/>
                         Criar Usuário
                     </button>
-                    {/* <div id='formAddPerson' className='AddUser'>
-                        <h1>Criar Usuário</h1>
-                        <input type='text' placeholder='Nome do Usuário' onChange={(event) => {setName(event.target.value)}}/>
-                        <input type='email' placeholder='Email' onChange={(event) => {setEmail(event.target.value)}}/>
-                        <button id='btnAddPerson' onClick={() => {dispatch(addUser({id: userList[userList.length - 1].id + 1, name , email}))}}>
-                            <img src="https://img.icons8.com/small/16/F5F5F5/add.png"/>
-                            Adicionar
-                        </button>    
-                    </div> */}
                     
                 </aside>
 
