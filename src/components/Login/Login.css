@@ -1,29 +1,32 @@
-.App{
+.sectionGeneral{
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: 35% auto;
+    position: absolute;
 }
 
-.sectionExbForm{
+.asideExbForm{
     min-width: 50vh;
     height: fit-content;
     margin: auto;
     display: block;
 }
-.sectionExbForm h1{
+.asideExbForm h1{
     font-size: 5vh;
 }
-.sectionExbForm h2{
+.asideExbForm h2{
     width: 80%;
     font-size: 2vh;
     margin-top: 1vh;
 }
-.sectionExbForm h1, h2{
+.asideExbForm h1, h2{
     width: 100%;
     text-align: center;
     font-weight: 500;
     margin: 0;
 }
-.sectionExbForm button{
+.asideExbForm button{
     width: 80%;
     height: fit-content;
     border-radius: 7px;
@@ -35,24 +38,24 @@
     font-weight: 500;
     padding: 1vh 0vw;
 }
-.sectionExbForm button img{
+.asideExbForm button img{
     margin: auto 1vw auto auto;
 }
-.sectionExbForm button p{
+.asideExbForm button p{
     margin: auto auto auto 0vh;
 }
-.sectionExbForm span{
+.asideExbForm span{
     width: 80%;
     height: 1px;
     background-color: #dfdfdf;
     display: flex;
     margin: 5vh auto auto auto;
 }
-.sectionExbForm span div{
+.asideExbForm span div{
     width: fit-content;
     margin: auto;
 }
-.sectionExbForm span p{
+.asideExbForm span p{
     text-align: center;
     margin: -1.5vh 0vw 0vh -1vw;
     background-color: white;
@@ -62,21 +65,21 @@
     font-size: 2vh;
 }
 
-.sectionExbForm form{
+.asideExbForm form{
     width: 100%;
     height: fit-content;
     display: grid;
     grid-gap: 3vh;
     margin-top: 7vh;
 }
-.sectionExbForm form input{
+.asideExbForm form input{
     width: 80%;
     height: 3vh;
     margin: auto;
     border-bottom: 1px solid #dfdfdf;
     padding-bottom: 1vh;
 }
-.sectionExbForm form button{
+.asideExbForm form button{
     width: fit-content;
     margin: 0vh 10% 0vh auto;
     border-radius: 0;
@@ -98,13 +101,13 @@
 }
 
 
-.sectionExbDecoration{
+.asideExbDecoration{
     background-image: url('../Images/Predio.jpg');
     background-size: cover;
     border-radius: 8vw 0px 0px 8vw;
     display: grid;
 }
-.sectionExbDecoration i{
+.asideExbDecoration i{
     width: 30vh;
     height: 30vh;
     background-image: url('../Images/Icone.svg');
@@ -112,7 +115,7 @@
     margin: auto auto 0vh auto;
     display: block;
 }
-.sectionExbDecoration p{
+.asideExbDecoration p{
     color: white;
     margin-top: auto;
     text-align: center;
