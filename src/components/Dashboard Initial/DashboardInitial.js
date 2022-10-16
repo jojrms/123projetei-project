@@ -22,8 +22,23 @@ export default function DashboardInitial(){
         document.getElementById('divAbsoluteCreate').style.display = 'flex';
     }
 
-    const users = JSON.parse(localStorage.getItem("users"));
-    console.log(users);
+    // Guardando o array que contem os 
+    // usuários fakes pré-cadastrados
+    localStorage.setItem('users', JSON.stringify(userList));
+
+    // Guardando em uma constante o array que contem os 
+    // usuários fakes e os já criados, para fazer futura verificação
+    const allUsers = JSON.parse(localStorage.getItem('newUser'));
+
+    let users;
+
+    // Se a chave "newUser" existir no localStorage, executa
+    if (allUsers){
+        users = allUsers;
+    } else {
+        users = JSON.parse(localStorage.getItem('users'));
+    }
+
 
     return(
         <section className='sectionGeneralDashboard'>

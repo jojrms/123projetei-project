@@ -48,6 +48,11 @@ export default function CreateUser(){
             // Puxa a chave "newUser" para fazer verificação de sua existência
             const newUser = JSON.parse(localStorage.getItem('newUser'));
 
+            // Armazena em uma constante a array com os usuários fakes da
+            // chave "users"
+            const fakeUsers = JSON.parse(localStorage.getItem('users'));
+            console.log('usuarios fakes', fakeUsers);
+
             // Se existir essa chave com um valor, executa
             if( newUser ){ 
 
@@ -57,13 +62,18 @@ export default function CreateUser(){
                 localStorage.setItem('newUser', JSON.stringify(newUser));
 
                 console.log(newUser, 'A lista de usuários existentes foi atualizado');
-            } else{
+            } 
+            // Se não existir, cria uma com os dados fakes e o novo usuário criado
+            else{
 
                 // Armazeno no localStorage uma nova chave com o 
-                // valor do novo usuário
-                localStorage.setItem('newUser', JSON.stringify([user.payload]))
+                // valor dos usuários fakes + o novo usuário
+                localStorage.setItem('newUser', JSON.stringify(fakeUsers))
+                const fakes = JSON.parse(localStorage.getItem('newUser'));
+                fakes.push(user.payload)
+                localStorage.setItem('newUser', JSON.stringify(fakes))
 
-                console.log(newUser, 'Foi criado uma lista com 1 novo usuário');
+                console.log(newUser, 'Foi criado uma lista com os novos usuários');
             }
             
 
