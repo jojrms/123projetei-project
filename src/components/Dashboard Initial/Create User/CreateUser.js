@@ -32,27 +32,46 @@ export default function CreateUser(){
 
         if(data.name.length < 5 || data.email.length < 10 || data.username.length < 5){
             window.alert('Não foi possível criar este usuário. Preencha todos os campos corretamente')
-        } else{
-            dispatch(addUser({
+        } 
+        else{
+            // Cria uma constante para armazenar em uma array os dados 
+            // do usuário que será criado
+            const user = dispatch(addUser({
                 id: userList[userList.length - 1].id + 1, 
                 name: data.name , 
                 username: data.username , 
                 email: data.email
             }))
 
-            // Cria um let para armazenar em uma array os dados 
-            // do usuário que será criado
-            let newUser = {
-                id: userList[userList.length - 1].id + 1, 
-                name: data.name, 
-                username: data.username, 
-                email: data.email
-            }
-            // Resgato a array do localstorage para inserir o novo usuário
+            console.log('novo usuario no dispatch', user.payload);
 
-            let users = JSON.parse(localStorage.getItem('users'));
-            users.push(newUser)
-            localStorage.setItem('users', JSON.stringify(users))
+            // Puxa a chave "newUser" para fazer verificação de sua existência
+            const newUser = JSON.parse(localStorage.getItem('newUser'));
+
+            // Se existir essa chave com um valor, executa
+            if( newUser ){ 
+
+                // Unifico a array do localStorage com o objeto
+                // que contem o novo usuário
+                newUser.push(user.payload);
+                localStorage.setItem('newUser', JSON.stringify(newUser));
+
+                console.log(newUser, 'A lista de usuários existentes foi atualizado');
+            } else{
+
+                // Armazeno no localStorage uma nova chave com o 
+                // valor do novo usuário
+                localStorage.setItem('newUser', JSON.stringify([user.payload]))
+
+                console.log(newUser, 'Foi criado uma lista com 1 novo usuário');
+            }
+            
+
+
+            // Resgato a array do localstorage para inserir o novo usuário
+            // let users = JSON.parse(localStorage.getItem('users'));
+            // users.push(newUser)
+            // localStorage.setItem('users', JSON.stringify(users))
 
 
             document.getElementById('divAbsoluteCreate').style.display = 'none';
