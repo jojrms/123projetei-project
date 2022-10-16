@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { editUser } from '../../../features/Users';
 import useAuth from '../../../hooks/useAuth';
@@ -16,12 +16,12 @@ export default function EditUser(){
     const navigate = useNavigate();
     const params = useParams();
 
-    // Puxa a lista de usuários fakes criados no FakeData.js
-
-    let users = JSON.parse(localStorage.getItem('users'));
+    // Guardando em uma let o array que contem os 
+    // usuários fakes e os já criados, para fazer futura verificação
+    let allUsers = JSON.parse(localStorage.getItem('newUser'));
 
     // Filtra da lista o usuário que possui a mesma ID do parâmetro na URL
-    const existUser = users.filter(user => user.id === parseInt(params.id))
+    const existUser = allUsers.filter(user => user.id === parseInt(params.id))
 
     // Armazena os dados deste usuário
     const {name, username, email} = existUser[0]
@@ -35,13 +35,24 @@ export default function EditUser(){
     // Função para editar usuário. Exibe as informações no input e, após editar
     // retorna ao dashboard.
     function handleEditUser(){
-        dispatch(editUser({
+
+        // Função para modificar o usuário
+        const userModificate = dispatch(editUser({
             id: params.id,
             name: data.name,
             username: data.username,
             email: data.email
         }));
-        localStorage.setItem('users', JSON.stringify(users))
+
+        // Armazeno na constante 'index' o número do índice do usuário
+        // que será modificado
+        const index = allUsers.findIndex( (element) => element.id === parseInt(params.id) );
+
+        // Substitui o usuário da array
+        allUsers.splice(index, 1, userModificate.payload);
+
+        console.log(userModificate.payload);
+        localStorage.setItem('newUser', JSON.stringify(allUsers))
         navigate("/DashboardInitial")
     }
 
