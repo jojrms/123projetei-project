@@ -38,7 +38,7 @@ export default function EditUser(){
 
         // Função para modificar o usuário
         const userModificate = dispatch(editUser({
-            id: params.id,
+            id: parseInt(params.id),
             name: data.name,
             username: data.username,
             email: data.email
