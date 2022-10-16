@@ -1,6 +1,4 @@
-import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import { deleteUser } from '../../../features/Users';
 
 import './ViewerPerson.css';
 
@@ -20,12 +18,14 @@ export default function ViewerPerson({id, name, email, user, image}){
 
         const identification = id;
         console.log(identification, 'identificação do usuário');
+        navigate(`/DashboardInitial/delete-user/${identification}`)
+
 
         // Puxa a chave "newUser" para fazer verificação de sua existência
         const newUser = JSON.parse(localStorage.getItem('newUser'));
 
         // Puxa a chave "users" para fazer verificação de sua existência
-        const users = JSON.parse(localStorage.getItem('newUser'));
+        const users = JSON.parse(localStorage.getItem('users'));
 
         // Se existir a chave "newUsers" no localStorage, executa
         if(newUser) {
@@ -37,6 +37,13 @@ export default function ViewerPerson({id, name, email, user, image}){
             // Substitui a array do LocalStorage pela nova, com o 
             // usuário excluido
             localStorage.setItem('newUser', JSON.stringify(newUser))
+            navigate(`/DashboardInitial`)
+
+        } else{
+            const index = users.findIndex( (element) => element.id === identification );
+            users.splice(index, 1);
+            localStorage.setItem('users', JSON.stringify(users))
+            navigate(`/DashboardInitial`)
         }
     }
 

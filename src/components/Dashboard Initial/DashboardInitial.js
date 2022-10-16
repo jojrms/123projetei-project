@@ -16,7 +16,6 @@ export default function DashboardInitial(){
     // Puxa a lista de usuários fakes criados no arquivo FakeData.js
     const userList = useSelector((state) => state.users.value)
 
-    
     // Função para exibir a div que cria usuários
     function createUser(){
         document.getElementById('divAbsoluteCreate').style.display = 'flex';
@@ -26,9 +25,9 @@ export default function DashboardInitial(){
     // usuários fakes pré-cadastrados
     localStorage.setItem('users', JSON.stringify(userList));
 
-    // Guardando em uma constante o array que contem os 
+    // Guardando em uma let o array que contem os 
     // usuários fakes e os já criados, para fazer futura verificação
-    const allUsers = JSON.parse(localStorage.getItem('newUser'));
+    let allUsers = JSON.parse(localStorage.getItem('newUser'));
 
     let users;
 
@@ -36,8 +35,13 @@ export default function DashboardInitial(){
     if (allUsers){
         users = allUsers;
     } else {
-        users = JSON.parse(localStorage.getItem('users'));
+        allUsers = localStorage.setItem('newUser', JSON.stringify(userList));
+        users = allUsers;
+
+        console.log('os usuarios usados', users);
     }
+
+    const usersToMap = users;
 
 
     return(
@@ -81,7 +85,7 @@ export default function DashboardInitial(){
                 </aside>
 
                 <section className='sectionExbTeam'>
-                        {users.map((user) => {
+                        {usersToMap.map((user) => {
                             return(
                                 <ViewerPerson 
                                     key={user.id}
@@ -94,15 +98,6 @@ export default function DashboardInitial(){
                                 />
                             )
                         })}
-                            {/* <ViewerPerson 
-                                key={newUsers.id}
-                                id={newUsers.id}
-                                name={newUsers.name}
-                                user={newUsers.username}
-                                email={newUsers.email}
-                                image={newUsers.urlPhoto}
-
-                            /> */}
                 </section>
 
             </section>

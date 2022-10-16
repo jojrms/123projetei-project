@@ -23,6 +23,7 @@ function App() {
               <Route path="*" element={<Login/>}/>
               <Route path="/DashboardInitial" element={<DashboardInitial/>}/>
               <Route path="/DashboardInitial/edit-user/:id" element={<EditUser/>}/>
+              <Route path="/DashboardInitial/delete-user/:id" element={<DashboardInitial/>}/>
               <Route path="/DashboardInitial/create-user/:id" element={<DashboardInitial/>}/>
           </Routes>
         </div> 

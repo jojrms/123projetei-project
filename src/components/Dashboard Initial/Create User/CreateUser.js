@@ -34,19 +34,20 @@ export default function CreateUser(){
             window.alert('Não foi possível criar este usuário. Preencha todos os campos corretamente')
         } 
         else{
+
+            // Puxa a chave "newUser" para fazer verificação de sua existência
+            const newUser = JSON.parse(localStorage.getItem('newUser'));
+
             // Cria uma constante para armazenar em uma array os dados 
             // do usuário que será criado
             const user = dispatch(addUser({
-                id: userList[userList.length - 1].id + 1, 
+                id: newUser[newUser.length - 1].id + 1, 
                 name: data.name , 
                 username: data.username , 
                 email: data.email
             }))
 
             console.log('novo usuario no dispatch', user.payload);
-
-            // Puxa a chave "newUser" para fazer verificação de sua existência
-            const newUser = JSON.parse(localStorage.getItem('newUser'));
 
             // Armazena em uma constante a array com os usuários fakes da
             // chave "users"
@@ -62,27 +63,7 @@ export default function CreateUser(){
                 localStorage.setItem('newUser', JSON.stringify(newUser));
 
                 console.log(newUser, 'A lista de usuários existentes foi atualizado');
-            } 
-            // Se não existir, cria uma com os dados fakes e o novo usuário criado
-            else{
-
-                // Armazeno no localStorage uma nova chave com o 
-                // valor dos usuários fakes + o novo usuário
-                localStorage.setItem('newUser', JSON.stringify(fakeUsers))
-                const fakes = JSON.parse(localStorage.getItem('newUser'));
-                fakes.push(user.payload)
-                localStorage.setItem('newUser', JSON.stringify(fakes))
-
-                console.log(newUser, 'Foi criado uma lista com os novos usuários');
-            }
-            
-
-
-            // Resgato a array do localstorage para inserir o novo usuário
-            // let users = JSON.parse(localStorage.getItem('users'));
-            // users.push(newUser)
-            // localStorage.setItem('users', JSON.stringify(users))
-
+            }      
 
             document.getElementById('divAbsoluteCreate').style.display = 'none';
         }
