@@ -44,7 +44,8 @@ export default function CreateUser(){
                 id: newUser[newUser.length - 1].id + 1, 
                 name: data.name , 
                 username: data.username , 
-                email: data.email
+                email: data.email ,
+                urlPhoto: "https://img.icons8.com/fluency-systems-regular/96/000000/user.png" ,
             }))
 
             console.log('novo usuario no dispatch', user.payload);

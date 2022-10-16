@@ -18,9 +18,7 @@
     background-size: cover;
 }
 .divBackground h1{
-    margin: 0;
-    position: absolute;
-    margin-left: 1vh;
+    margin: 0vh 0vh -5vh 1vh;
     font-size: 4vh;
     font-weight: 500;
     color: #efefef;
