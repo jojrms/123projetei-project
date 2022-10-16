@@ -28,7 +28,7 @@ export default function CreateUser(){
     // Função que verifica se os campos foram preenchidos. Caso forem, cria o usuário e retorna
     // para o dashboard.
     // OBS: NÃO FOI REALIZADA VERIFICAÇÃO IDEAL
-    const createUser = async() => {
+    const createUser = () => {
 
         if(data.name.length < 5 || data.email.length < 10 || data.username.length < 5){
             window.alert('Não foi possível criar este usuário. Preencha todos os campos corretamente')
