@@ -23,7 +23,7 @@ export default function DashboardInitial(){
     }
 
     const users = JSON.parse(localStorage.getItem("users"));
-    console.log(users);
+    console.log(userList);
 
     return(
         <section className='sectionGeneralDashboard'>
@@ -66,7 +66,7 @@ export default function DashboardInitial(){
                 </aside>
 
                 <section className='sectionExbTeam'>
-                        {users.map((user) => {
+                        {userList.map((user) => {
                             return(
                                 <ViewerPerson 
                                     key={user.id}
